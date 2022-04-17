@@ -4,15 +4,15 @@ import com.cloudbees.plugins.credentials.*
 def getNodes() {
 // Returns all Nodes in the system, excluding Jenkins instance itself which represents the built-in node
 // (in other words, this only returns agents).
-  Jenkins.instance.getNodes()
+  Jenkins.get().getNodes()
 }
 
 def getNodesAndMaster() {
-  Jenkins.instance.getComputers().collect { it.getNode() }
+  Jenkins.get().getComputers().collect { it.getNode() }
 }
 
 def getComputers() {
-  Jenkins.instance.getComputers()
+  Jenkins.get().getComputers()
 }
 
 def setOnline(computers) {
@@ -52,7 +52,7 @@ def deleteWorkspaceContents(nodes) {
 
 def getLabels() {
   // or maybe use getAssignedLabels()
-  Jenkins.instance.getComputers().collect { it.getNode().getSelfLabel().toString() }
+  Jenkins.get().getComputers().collect { it.getNode().getSelfLabel().toString() }
 }
 
 // examples
