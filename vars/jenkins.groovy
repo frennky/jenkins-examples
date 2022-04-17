@@ -81,5 +81,3 @@ def printCredentials(credentials) {
     println()
   }
 }
-
-return this
