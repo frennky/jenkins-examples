@@ -71,6 +71,7 @@ def getCredentials() {
   CredentialsProvider.lookupCredentials(Credentials, Jenkins.instance, null, null)
 }
 
+@NonCPS
 def printCredentials(credentials) {
   credentials.sort{it.id}.each {
     println it.properties
