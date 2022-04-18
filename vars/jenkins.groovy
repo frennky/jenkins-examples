@@ -2,8 +2,8 @@ import jenkins.model.*
 import com.cloudbees.plugins.credentials.*
 
 def getNodes() {
-// Returns all Nodes in the system, excluding Jenkins instance itself which represents the built-in node
-// (in other words, this only returns agents).
+  // Returns all Nodes in the system, excluding Jenkins instance itself which represents the built-in node
+  // (in other words, this only returns agents).
   Jenkins.get().getNodes()
 }
 
@@ -56,8 +56,8 @@ def getLabels() {
 }
 
 // examples
-//def action = { sh 'uptime' }
-//def action = { println "uname -a".execute().text }
+// def action = { sh 'uptime' }
+// def action = { println "uname -a".execute().text }
 
 def run(labels, action) {
   labels.each {
